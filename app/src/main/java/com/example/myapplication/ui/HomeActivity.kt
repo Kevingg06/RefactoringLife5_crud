@@ -7,6 +7,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityHomeBinding
+import com.example.myapplication.model.Product
+import com.example.myapplication.repository.Repository
+import com.example.myapplication.repository.RepositoryImp
+import com.example.myapplication.utils.Inventory
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -21,4 +25,5 @@ class HomeActivity : AppCompatActivity() {
             insets
         }
     }
+
 }
