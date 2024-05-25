@@ -12,17 +12,17 @@ class RepositoryImp() : Repository {
     override fun deleteProduct(id: String, cantidad: Int) {
         for (item in products) {
             if (id == item.id) {
-                item.stock = item.stock - cantidad
+                item.stock -= cantidad
             }
         }
     }
 
-    override fun searchProduct(id: String):Product? {
+    override fun searchProduct(id: String): Product? {
         for (product in products) {
             if (product.id == id) {
-                    return product
-                }
+                return product
             }
-        return null
         }
+        return null
+    }
 }
