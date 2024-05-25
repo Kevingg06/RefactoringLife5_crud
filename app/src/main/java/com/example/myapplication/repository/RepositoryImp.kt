@@ -1,12 +1,15 @@
 package com.example.myapplication.repository
-
 import com.example.myapplication.model.Product
-import com.example.myapplication.utils.Inventory
 import com.example.myapplication.utils.Inventory.products
 
 class RepositoryImp() : Repository {
+
+    override fun getProducts(): List<Product> {
+        return Inventory.products
+    }
+
     override fun addProduct(product: Product) {
-        TODO("Not yet implemented")
+        Inventory.products.add(product)
     }
 
     override fun deleteProduct(id: String, cantidad: Int) {
