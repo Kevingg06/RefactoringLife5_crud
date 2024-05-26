@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityHomeFragmentBinding
+import com.example.myapplication.R
 
 class HomeActivityFragment : AppCompatActivity() {
 
@@ -55,4 +56,5 @@ class HomeActivityFragment : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_home_activity_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
 }
