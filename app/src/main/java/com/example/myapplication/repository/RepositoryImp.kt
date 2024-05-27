@@ -1,10 +1,12 @@
 package com.example.myapplication.repository
 
 import com.example.myapplication.model.Product
-import com.example.myapplication.utils.Inventory
 import com.example.myapplication.utils.Inventory.products
+import com.example.myapplication.utils.ProductsAdapter
 
-class RepositoryImp() : Repository {
+class RepositoryImp : Repository {
+
+
     override fun addProduct(product: Product) {
         TODO("Not yet implemented")
     }
@@ -17,12 +19,20 @@ class RepositoryImp() : Repository {
         }
     }
 
-    override fun searchProduct(id: String): Product? {
-        for (product in products) {
-            if (product.id == id) {
-                return product
+    override fun searchProduct(productList: MutableList<Product>, newText: String?): List<Product> {
+        val filteredList = mutableListOf<Product>()
+
+        if (newText.isNullOrBlank()) {
+            filteredList.addAll(productList)
+        } else {
+            productList.forEach {
+                if (it.id.lowercase().contains(newText.lowercase())) {
+                    filteredList.add(it)
+                }
             }
         }
-        return null
+        return filteredList
     }
+
 }
+
