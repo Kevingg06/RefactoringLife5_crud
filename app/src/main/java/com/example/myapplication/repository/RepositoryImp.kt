@@ -1,16 +1,22 @@
 package com.example.myapplication.repository
 import com.example.myapplication.model.Product
-import com.example.myapplication.utils.Inventory
 import com.example.myapplication.utils.Inventory.products
 
 class RepositoryImp() : Repository {
 
     override fun getProducts(): List<Product> {
-        return Inventory.products
+        return products
     }
 
     override fun addProduct(product: Product) {
-        Inventory.products.add(product)
+        products.add(product)
+    }
+
+    override fun updateProduct(product: Product) {
+        val index = products.indexOfFirst { it.id == product.id }
+        if (index != -1) {
+            products[index] = product
+        }
     }
 
     override fun deleteProduct(id: String, cantidad: Int) {

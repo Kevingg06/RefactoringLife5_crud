@@ -13,13 +13,20 @@
 
     <fragment
         android:id="@+id/nav_add"
-        android:name="com.example.myapplication.ui.ui.add.AddFragment"
-        android:label="@string/menu_add"
+        android:name="com.example.myapplication.ui.ui.update.UpdateFragment"
+        android:label="@string/menu_update"
         tools:layout="@layout/fragment_add" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_update"
+        android:name="com.example.myapplication.ui.ui.add.AddFragment"
+        android:label="@string/menu_add"
+        tools:layout="@layout/fragment_update" />
+
+
+    <fragment
+        android:id="@+id/nav_delete"
         android:name="com.example.myapplication.ui.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_delete"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import com.example.myapplication.databinding.FragmentAddBinding;
 import com.example.myapplication.model.Product;
 import com.example.myapplication.ui.ProductViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
 class AddFragment : Fragment() {
@@ -29,15 +30,70 @@ class AddFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.addButton.setOnClickListener {
-            val id = binding.idEditText.text.toString()
-            val name = binding.nameEditText.text.toString()
-            val image = binding.imageEditText.text.toString()
-            val stock = binding.stockEditText.text.toString().toInt()
-            val product = Product(id, name, image, stock)
+            val id = binding.idEditText.text.toString().trim()
+            val name = binding.nameEditText.text.toString().trim()
+            val priceText = binding.priceEditText.text.toString().trim()
+            val image = binding.imageEditText.text.toString().trim()
+            val stockText = binding.stockEditText.text.toString().trim()
+
+            if (id.isEmpty()) {
+                binding.idEditText.error = "Se requiere el ID del producto"
+                return@setOnClickListener
+            }
+
+            if (name.isEmpty()) {
+                binding.nameEditText.error = "Se requiere el nombre del producto"
+                return@setOnClickListener
+            }
+
+            if (priceText.isEmpty()) {
+                binding.priceEditText.error = "Se requiere el precio del producto"
+                return@setOnClickListener
+            }
+
+            val price = try {
+                priceText.toDouble()
+            } catch (e: NumberFormatException) {
+                binding.priceEditText.error = "El precio debe ser un número decimal"
+                return@setOnClickListener
+            }
+
+            if (image.isEmpty()) {
+                binding.imageEditText.error = "Se requiere la URL de la imagen"
+                return@setOnClickListener
+            }
+
+            if (stockText.isEmpty()) {
+                binding.stockEditText.error = "Se requiere el stock del producto"
+                return@setOnClickListener
+            }
+
+            val stock = try {
+                stockText.toInt()
+            } catch (e: NumberFormatException) {
+                binding.stockEditText.error = "El stock debe ser un número"
+                return@setOnClickListener
+            }
+
+            val product = Product(id, name, price, image, stock)
             viewModel.addProduct(product)
+
+            // Mensaje de alerta
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Producto añadido")
+                .setMessage("El producto se ha agregado exitosamente.")
+                .setPositiveButton("OK") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .show()
+
+            // Limpiar campos
+            binding.idEditText.text?.clear()
+            binding.nameEditText.text?.clear()
+            binding.imageEditText.text?.clear()
+            binding.stockEditText.text?.clear()
         }
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
