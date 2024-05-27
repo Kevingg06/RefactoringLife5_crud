@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.myapplication.ui.ui.add.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_add"
+        android:name="com.example.myapplication.ui.ui.add.AddFragment"
+        android:label="@string/menu_add"
+        tools:layout="@layout/fragment_add" />
 
     <fragment
         android:id="@+id/nav_slideshow"
