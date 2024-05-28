@@ -8,16 +8,18 @@ import com.example.myapplication.databinding.ItemHomeBinding
 import com.example.myapplication.model.Product
 import com.squareup.picasso.Picasso
 
-class ProductsAdapter(private var productList: List<Product>) : RecyclerView.Adapter<ProductsHolder>() {
+class ProductsAdapter(private var productList: MutableList<Product>) : RecyclerView.Adapter<ProductsHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_home, parent, false)
         return ProductsHolder(view)
     }
 
-    fun setFilteredList(filteredList: List<Product>){
-        productList = filteredList
+    fun setNewList(newList: List<Product>){
+        productList.clear()
+        productList.addAll(newList)
         notifyDataSetChanged()
     }
+
 
     override fun getItemCount(): Int {
         return productList.size
