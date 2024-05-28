@@ -23,7 +23,7 @@ class DeleteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val deleteViewModel =
-            ViewModelProvider(this).get(DeleteViewModel::class.java)
+        ViewModelProvider(this).get(DeleteViewModel::class.java)
 
         _binding = FragmentDeleteBinding.inflate(inflater, container, false)
         val root: View = binding.root

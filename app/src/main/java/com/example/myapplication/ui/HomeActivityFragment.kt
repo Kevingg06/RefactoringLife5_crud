@@ -2,6 +2,7 @@ package com.example.myapplication.ui
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -11,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityHomeFragmentBinding
 
@@ -40,11 +42,7 @@ class HomeActivityFragment : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-<<<<<<< HEAD
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_delete
-=======
-                R.id.nav_home, R.id.nav_add, R.id.nav_update
->>>>>>> 44b97abec212f4bc8b58aa1255e5ca8643dd5e60
+                R.id.nav_home, R.id.nav_add, R.id.nav_update, R.id.nav_delete
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -56,6 +54,18 @@ class HomeActivityFragment : AppCompatActivity() {
         menuInflater.inflate(R.menu.home_activity, menu)
         return true
     }
+
+    //Intento de navegacion para que al presionar el boton delete, muestre la pantalla del Recycler View de productos.
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                binding.drawerLayout.openDrawer(GravityCompat.START)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+    //Fin Intento
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_home_activity_fragment)
