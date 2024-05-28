@@ -1,3 +1,5 @@
+package com.example.myapplication.ui.ui.update
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +11,7 @@ import com.example.myapplication.model.Product;
 import com.example.myapplication.ui.ProductViewModel;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-class EditFragment : Fragment() {
+class UpdateFragment : Fragment() {
 
     private var _binding: FragmentUpdateBinding? = null
     private val binding get() = _binding!!
@@ -37,7 +39,7 @@ class EditFragment : Fragment() {
                 MaterialAlertDialogBuilder(requireContext())
                     .setTitle("Error")
                     .setMessage("Todos los campos deben estar llenos")
-                    .setPositiveButton("OK", null)
+                    .setPositiveButton("Aceptar", null)
                     .show()
             } else {
                 val product = Product(id, name, price.toDouble(), image, stock.toInt())
@@ -45,7 +47,7 @@ class EditFragment : Fragment() {
                 MaterialAlertDialogBuilder(requireContext())
                     .setTitle("Éxito")
                     .setMessage("Producto actualizado correctamente")
-                    .setPositiveButton("OK", null)
+                    .setPositiveButton("Aceptar", null)
                     .show()
             }
         }

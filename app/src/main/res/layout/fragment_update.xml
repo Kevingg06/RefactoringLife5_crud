@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_margin="10dp"
         android:padding="16dp"
         tools:context=".ui.UpdateFragment">
 
@@ -72,14 +73,17 @@
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/updateButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="18dp"
-            android:backgroundTint="@color/azul"
-            android:text="Actualizar producto" />
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:text="Actualizar producto"
+            android:background="@drawable/button_background"/>
 
     </LinearLayout>
 </layout>

@@ -82,7 +82,7 @@ class AddFragment : Fragment() {
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Producto añadido")
                 .setMessage("El producto se ha agregado exitosamente.")
-                .setPositiveButton("OK") { dialog, _ ->
+                .setPositiveButton("Aceptar") { dialog, _ ->
                     dialog.dismiss()
                 }
                 .show()
@@ -90,6 +90,7 @@ class AddFragment : Fragment() {
             // Limpiar campos
             binding.idEditText.text?.clear()
             binding.nameEditText.text?.clear()
+            binding.priceEditText.text?.clear()
             binding.imageEditText.text?.clear()
             binding.stockEditText.text?.clear()
         }
