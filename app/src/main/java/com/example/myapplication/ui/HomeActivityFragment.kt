@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityHomeFragmentBinding
 
+
 class HomeActivityFragment : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -56,4 +57,5 @@ class HomeActivityFragment : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_home_activity_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
 }

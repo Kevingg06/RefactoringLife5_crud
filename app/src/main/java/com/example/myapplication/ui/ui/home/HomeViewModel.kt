@@ -1,13 +1,15 @@
 package com.example.myapplication.ui.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+
 import androidx.lifecycle.ViewModel
+import com.example.myapplication.model.Product
+import com.example.myapplication.repository.RepositoryImp
 
-class HomeViewModel : ViewModel() {
+import com.example.myapplication.utils.Inventory.products
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+class HomeViewModel(private val repositoryImp: RepositoryImp = RepositoryImp()) : ViewModel() {
+
+    fun searchProducts(newText : String?): List<Product>{
+        return repositoryImp.searchProduct(products, newText)
     }
-    val text: LiveData<String> = _text
 }
