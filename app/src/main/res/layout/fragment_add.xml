@@ -181,6 +181,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="19dp"
             android:hint="ID del producto">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -192,6 +193,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="19dp"
             android:hint="Nombre">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -203,6 +205,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="19dp"
             android:hint="Precio">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -214,6 +217,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="19dp"
             android:hint="Imagen URL">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -225,6 +229,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="19dp"
             android:hint="Stock">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -242,7 +247,7 @@
             android:layout_marginTop="18dp"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="16dp"
+            android:textSize="18dp"
             android:text="Agregar producto"
             android:background="@drawable/button_background"/>
 
