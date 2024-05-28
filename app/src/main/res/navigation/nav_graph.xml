@@ -11,11 +11,16 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
         <action
+<<<<<<< HEAD:app/src/main/res/navigation/mobile_navigation.xml
+            android:id="@+id/action_nav_home_to_nav_delete"
+            app:destination="@id/nav_delete" />
+=======
             android:id="@+id/action_nav_home_to_nav_add"
             app:destination="@id/nav_add" />
         <action
             android:id="@+id/action_nav_home_to_nav_update"
             app:destination="@id/nav_update" />
+>>>>>>> 44b97abec212f4bc8b58aa1255e5ca8643dd5e60:app/src/main/res/navigation/nav_graph.xml
     </fragment>
 
     <fragment
@@ -25,9 +30,16 @@
         tools:layout="@layout/fragment_add" />
 
     <fragment
+<<<<<<< HEAD:app/src/main/res/navigation/mobile_navigation.xml
+        android:id="@+id/nav_delete"
+        android:name="com.example.myapplication.ui.ui.delete.DeleteFragment"
+        android:label="@string/menu_delete"
+        tools:layout="@layout/fragment_delete" />
+=======
         android:id="@+id/nav_update"
         android:name="com.example.myapplication.ui.ui.update.UpdateFragment"
         android:label="@string/menu_update"
         tools:layout="@layout/fragment_update" />
 
+>>>>>>> 44b97abec212f4bc8b58aa1255e5ca8643dd5e60:app/src/main/res/navigation/nav_graph.xml
 </navigation>

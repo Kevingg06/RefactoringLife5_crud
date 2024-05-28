@@ -13,12 +13,17 @@
             android:icon="@drawable/ic_menu_add"
             android:title="@string/menu_add" />
         <item
+<<<<<<< HEAD
+            android:id="@+id/nav_delete"
+            android:icon="@android:drawable/ic_menu_delete"
+=======
             android:id="@+id/nav_update"
             android:icon="@drawable/ic_menu_update"
             android:title="@string/menu_update" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_delete"
+>>>>>>> 44b97abec212f4bc8b58aa1255e5ca8643dd5e60
             android:title="@string/menu_delete" />
     </group>
 </menu>

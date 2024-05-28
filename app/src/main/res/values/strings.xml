@@ -10,6 +10,10 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_add">Añadir producto</string>
+<<<<<<< HEAD
+    <string name="menu_delete">Delete</string>
+=======
     <string name="menu_update">Actualizar producto</string>
     <string name="menu_delete">Eliminar producto</string>
+>>>>>>> 44b97abec212f4bc8b58aa1255e5ca8643dd5e60
 </resources>
