@@ -1,16 +1,17 @@
 package com.example.myapplication.repository
+
 import com.example.myapplication.model.Product
-import com.example.myapplication.utils.Inventory
 import com.example.myapplication.utils.Inventory.products
 
-class RepositoryImp() : Repository {
+
+class RepositoryImp : Repository {
 
     override fun getProducts(): List<Product> {
-        return Inventory.products
+        return products
     }
 
     override fun addProduct(product: Product) {
-        Inventory.products.add(product)
+        products.add(product)
     }
 
     override fun deleteProduct(id: String, cantidad: Int) {
@@ -21,12 +22,19 @@ class RepositoryImp() : Repository {
         }
     }
 
-    override fun searchProduct(id: String): Product? {
-        for (product in products) {
-            if (product.id == id) {
-                return product
+    override fun searchProduct(productList: MutableList<Product>, newText: String?): List<Product> {
+        val filteredList = mutableListOf<Product>()
+
+        if (newText.isNullOrBlank()) {
+            filteredList.addAll(productList)
+        } else {
+            productList.forEach {
+                if (it.id.lowercase().contains(newText.lowercase())) {
+                    filteredList.add(it)
+                }
             }
         }
-        return null
+        return filteredList
     }
+
 }
