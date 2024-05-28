@@ -36,8 +36,9 @@ class ProductsHolder(view: View) : RecyclerView.ViewHolder(view){
 
     fun render(value : Product){
         binding.productId.text = value.id
-        binding.productName.text = value.name
-        binding.productStock.text = value.stock.toString()
+        binding.productName.text = "Nombre: ${value.name}"
+        binding.productPrice.text = "Precio: $${value.price}"
+        binding.productStock.text = "Stock: ${value.stock}"
         Picasso.get().load(value.image).into(binding.productImage)
     }
 }
