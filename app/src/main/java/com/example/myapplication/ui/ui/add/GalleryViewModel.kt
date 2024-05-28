@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.ui.gallery
+package com.example.myapplication.ui.ui.add
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
