@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.activityViewModels;
+import androidx.navigation.fragment.navArgs
 import com.example.myapplication.databinding.FragmentUpdateBinding;
 import com.example.myapplication.model.Product;
 import com.example.myapplication.ui.ProductViewModel;
@@ -16,6 +17,8 @@ class UpdateFragment : Fragment() {
     private var _binding: FragmentUpdateBinding? = null
     private val binding get() = _binding!!
     private val viewModel: ProductViewModel by activityViewModels()
+    private val args: UpdateFragmentArgs by navArgs()
+    private lateinit var product: Product
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,29 +31,40 @@ class UpdateFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        product = viewModel.getProducts().find { it.id == args.productId } ?: return
+
+        binding.idUpdateText.setText(product.id)
+        binding.nameUpdateText.setText(product.name)
+        binding.imageUpdateText.setText(product.image)
+        binding.stockUpdateText.setText(product.stock.toString())
+        binding.priceUpdateText.setText(product.price.toString())
+
         binding.updateButton.setOnClickListener {
-            val id = binding.idUpdateText.text.toString()
             val name = binding.nameUpdateText.text.toString()
             val image = binding.imageUpdateText.text.toString()
-            val stock = binding.stockUpdateText.text.toString()
-            val price = binding.priceUpdateText.text.toString()
+            val stock = binding.stockUpdateText.text.toString().toIntOrNull() ?: 0
+            val price = binding.priceUpdateText.text.toString().toDoubleOrNull() ?: 0.0
 
-            if (id.isEmpty() || name.isEmpty() || image.isEmpty() || stock.isEmpty() || price.isEmpty()) {
-                MaterialAlertDialogBuilder(requireContext())
-                    .setTitle("Error")
-                    .setMessage("Todos los campos deben estar llenos")
-                    .setPositiveButton("Aceptar", null)
-                    .show()
-            } else {
-                val product = Product(id, name, price.toDouble(), image, stock.toInt())
-                viewModel.updateProduct(product)
-                MaterialAlertDialogBuilder(requireContext())
-                    .setTitle("Éxito")
-                    .setMessage("Producto actualizado correctamente")
-                    .setPositiveButton("Aceptar", null)
-                    .show()
+            if (name.isBlank() || image.isBlank()) {
+                showAlertDialog("Error", "Todos los campos son obligatorios")
+                return@setOnClickListener
             }
+
+            product.name = name
+            product.image = image
+            product.stock = stock
+            product.price = price
+            viewModel.updateProduct(product)
+            showAlertDialog("Éxito", "Producto actualizado correctamente")
         }
+    }
+
+    private fun showAlertDialog(title: String, message: String) {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton("OK", null)
+            .show()
     }
 
     override fun onDestroyView() {
@@ -58,3 +72,4 @@ class UpdateFragment : Fragment() {
         _binding = null
     }
 }
+

@@ -6,6 +6,6 @@ interface Repository {
     fun getProducts(): List<Product>
     fun addProduct(product: Product)
     fun updateProduct(product: Product)
-    fun deleteProduct(id:String, cantidad:Int)
+    fun deleteProduct(productId: String)
     fun searchProduct(productList: MutableList<Product>, newText: String?): List<Product>
 }

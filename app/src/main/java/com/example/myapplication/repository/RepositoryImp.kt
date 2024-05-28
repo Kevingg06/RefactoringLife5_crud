@@ -21,12 +21,8 @@ class RepositoryImp : Repository {
         }
     }
 
-    override fun deleteProduct(id: String, cantidad: Int) {
-        for (item in products) {
-            if (id == item.id) {
-                item.stock -= cantidad
-            }
-        }
+    override fun deleteProduct(productId: String) {
+        products.removeAll { it.id == productId }
     }
 
     override fun searchProduct(productList: MutableList<Product>, newText: String?): List<Product> {
