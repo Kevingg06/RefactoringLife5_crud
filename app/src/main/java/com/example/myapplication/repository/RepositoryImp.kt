@@ -14,6 +14,13 @@ class RepositoryImp : Repository {
         products.add(product)
     }
 
+    override fun updateProduct(product: Product) {
+        val index = products.indexOfFirst { it.id == product.id }
+        if (index != -1) {
+            products[index] = product
+        }
+    }
+
     override fun deleteProduct(id: String, cantidad: Int) {
         for (item in products) {
             if (id == item.id) {

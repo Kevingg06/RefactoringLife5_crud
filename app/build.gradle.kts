@@ -61,15 +61,22 @@ dependencies {
     implementation ("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation ("androidx.navigation:navigation-ui-ktx:2.3.5")
 
-    //picasso
+    // Picasso
     implementation("com.squareup.picasso:picasso:2.71828")
 
-    //retrofit
+    // Retrofit
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
     implementation ("com.squareup.okhttp3:logging-interceptor:4.7.2")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
 
-    //recycler
+    // Recycler
     implementation ("androidx.recyclerview:recyclerview:1.1.0")
+
+    // Material Dialogs
+    implementation ("com.afollestad.material-dialogs:core:3.3.0")
+
+    // Glide
+    implementation ("com.github.bumptech.glide:glide:4.13.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.13.0")
 }

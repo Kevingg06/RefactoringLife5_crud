@@ -3,12 +3,17 @@
     <string name="title_activity_home_fragment">HomeActivityFragment</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">OnPoint</string>
+    <string name="nav_header_subtitle">Menú de navegación</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_add">Añadir producto</string>
+<<<<<<< HEAD
     <string name="menu_delete">Delete</string>
+=======
+    <string name="menu_update">Actualizar producto</string>
+    <string name="menu_delete">Eliminar producto</string>
+>>>>>>> 44b97abec212f4bc8b58aa1255e5ca8643dd5e60
 </resources>
