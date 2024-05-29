@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.activityViewModels;
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.myapplication.databinding.FragmentUpdateBinding;
 import com.example.myapplication.model.Product;
@@ -31,7 +32,7 @@ class UpdateFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        product = viewModel.getProducts().find { it.id == args.productId } ?: return
+        product = viewModel.products.value?.find { it.id == args.productId } ?: return
 
         binding.idUpdateText.setText(product.id)
         binding.nameUpdateText.setText(product.name)
@@ -56,6 +57,9 @@ class UpdateFragment : Fragment() {
             product.price = price
             viewModel.updateProduct(product)
             showAlertDialog("Éxito", "Producto actualizado correctamente")
+        }
+        binding.backButton.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 

@@ -10,5 +10,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_add">Añadir producto</string>
     <string name="menu_update">Actualizar producto</string>
-    <string name="menu_delete">Delete</string>
+    <string name="menu_delete">Eliminar producto</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

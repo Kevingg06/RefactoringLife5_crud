@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.myapplication.databinding.FragmentAddBinding;
 import com.example.myapplication.model.Product;
 import com.example.myapplication.ui.ProductViewModel
@@ -94,7 +95,12 @@ class AddFragment : Fragment() {
             binding.imageEditText.text?.clear()
             binding.stockEditText.text?.clear()
         }
+
+        binding.backButton.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

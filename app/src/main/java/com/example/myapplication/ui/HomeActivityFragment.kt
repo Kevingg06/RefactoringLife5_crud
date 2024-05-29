@@ -36,11 +36,9 @@ class HomeActivityFragment : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_home_activity_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_add, R.id.nav_update
+                R.id.nav_home, R.id.nav_add, R.id.nav_update, R.id.nav_delete
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
