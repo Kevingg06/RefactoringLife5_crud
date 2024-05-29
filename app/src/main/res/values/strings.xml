@@ -10,5 +10,5 @@
     <string name="menu_home">Home</string>
     <string name="menu_add">Añadir producto</string>
     <string name="menu_update">Actualizar producto</string>
-    <string name="menu_delete">Delete</string>
+    <string name="menu_delete">Eliminar productos</string>
 </resources>
