@@ -1,136 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<navigation xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:id="@+id/mobile_navigation"-->
-<!--    app:startDestination="@+id/nav_home">-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/nav_home"-->
-<!--        android:name="com.example.myapplication.ui.ui.home.HomeFragment"-->
-<!--        android:label="@string/menu_home"-->
-<!--        tools:layout="@layout/fragment_home">-->
-<!--        <action-->
-<!--            android:id="@+id/actionHomeFragmentToAddFragment"-->
-<!--            app:destination="@id/nav_add"-->
-<!--            app:enterAnim="@anim/nav_default_enter_anim"-->
-<!--            app:exitAnim="@anim/nav_default_exit_anim"-->
-<!--            app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--            app:popExitAnim="@anim/nav_default_pop_exit_anim" />-->
-<!--        <action-->
-<!--            android:id="@+id/actionHomeFragmentToUpdateFragment"-->
-<!--            app:destination="@id/nav_update"-->
-<!--            app:enterAnim="@anim/nav_default_enter_anim"-->
-<!--            app:exitAnim="@anim/nav_default_exit_anim"-->
-<!--            app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--            app:popExitAnim="@anim/nav_default_pop_exit_anim" />-->
-<!--        <action-->
-<!--            android:id="@+id/actionHomeFragmentToDeleteFragment"-->
-<!--            app:destination="@id/nav_delete"-->
-<!--            app:enterAnim="@anim/nav_default_enter_anim"-->
-<!--            app:exitAnim="@anim/nav_default_exit_anim"-->
-<!--            app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--            app:popExitAnim="@anim/nav_default_pop_exit_anim" />-->
-<!--    </fragment>-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/nav_add"-->
-<!--        android:name="com.example.myapplication.ui.ui.add.AddFragment"-->
-<!--        android:label="@string/menu_add"-->
-<!--        tools:layout="@layout/fragment_add">-->
-<!--        <action-->
-<!--            android:id="@+id/action_nav_add_to_nav_home"-->
-<!--            app:destination="@id/nav_home"-->
-<!--            app:enterAnim="@anim/nav_default_enter_anim"-->
-<!--            app:exitAnim="@anim/nav_default_exit_anim"-->
-<!--            app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--            app:popExitAnim="@anim/nav_default_pop_exit_anim" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_nav_add_to_nav_update"-->
-<!--            app:destination="@id/nav_update"-->
-<!--            app:enterAnim="@anim/nav_default_enter_anim"-->
-<!--            app:exitAnim="@anim/nav_default_exit_anim"-->
-<!--            app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--            app:popExitAnim="@anim/nav_default_pop_exit_anim" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_nav_add_to_nav_delete"-->
-<!--            app:destination="@id/nav_delete"-->
-<!--            app:enterAnim="@anim/nav_default_enter_anim"-->
-<!--            app:exitAnim="@anim/nav_default_exit_anim"-->
-<!--            app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--            app:popExitAnim="@anim/nav_default_pop_exit_anim" />-->
-<!--    </fragment>-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/nav_update"-->
-<!--        android:name="com.example.myapplication.ui.ui.update.UpdateFragment"-->
-<!--        android:label="@string/menu_update"-->
-<!--        tools:layout="@layout/fragment_update">-->
-<!--        <argument-->
-<!--            android:name="productId"-->
-<!--            app:argType="string" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_nav_update_to_nav_home"-->
-<!--            app:destination="@id/nav_home"-->
-<!--            app:enterAnim="@anim/nav_default_enter_anim"-->
-<!--            app:exitAnim="@anim/nav_default_exit_anim"-->
-<!--            app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--            app:popExitAnim="@anim/nav_default_pop_exit_anim" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_nav_update_to_nav_add"-->
-<!--            app:destination="@id/nav_add"-->
-<!--            app:enterAnim="@anim/nav_default_enter_anim"-->
-<!--            app:exitAnim="@anim/nav_default_exit_anim"-->
-<!--            app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--            app:popExitAnim="@anim/nav_default_pop_exit_anim" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_nav_update_to_nav_delete"-->
-<!--            app:destination="@id/nav_delete"-->
-<!--            app:enterAnim="@anim/nav_default_enter_anim"-->
-<!--            app:exitAnim="@anim/nav_default_exit_anim"-->
-<!--            app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--            app:popExitAnim="@anim/nav_default_pop_exit_anim" />-->
-<!--    </fragment>-->
-
-<!--    <fragment-->
-<!--        android:id="@+id/nav_delete"-->
-<!--        android:name="com.example.myapplication.ui.ui.delete.DeleteFragment"-->
-<!--        android:label="@string/menu_delete"-->
-<!--        tools:layout="@layout/fragment_delete">-->
-<!--        <argument-->
-<!--            android:name="productId"-->
-<!--            app:argType="string" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_nav_delete_to_nav_home2"-->
-<!--            app:destination="@id/nav_home"-->
-<!--            app:enterAnim="@anim/nav_default_enter_anim"-->
-<!--            app:exitAnim="@anim/nav_default_exit_anim"-->
-<!--            app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--            app:popExitAnim="@anim/nav_default_pop_exit_anim" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_nav_delete_to_nav_update"-->
-<!--            app:destination="@id/nav_update"-->
-<!--            app:enterAnim="@anim/nav_default_enter_anim"-->
-<!--            app:exitAnim="@anim/nav_default_exit_anim"-->
-<!--            app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--            app:popExitAnim="@anim/nav_default_pop_exit_anim" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_nav_delete_to_nav_add"-->
-<!--            app:destination="@id/nav_add"-->
-<!--            app:enterAnim="@anim/nav_default_enter_anim"-->
-<!--            app:exitAnim="@anim/nav_default_exit_anim"-->
-<!--            app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--            app:popExitAnim="@anim/nav_default_pop_exit_anim" />-->
-<!--        <action-->
-<!--            android:id="@+id/action_nav_delete_to_nav_home"-->
-<!--            app:destination="@id/nav_home"-->
-<!--            app:enterAnim="@anim/nav_default_enter_anim"-->
-<!--            app:exitAnim="@anim/nav_default_exit_anim"-->
-<!--            app:popEnterAnim="@anim/nav_default_pop_enter_anim"-->
-<!--            app:popExitAnim="@anim/nav_default_pop_exit_anim" />-->
-<!--    </fragment>-->
-
-<!--</navigation>-->
 
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -151,12 +19,25 @@
         <action
             android:id="@+id/action_homeFragment_to_deleteFragment"
             app:destination="@id/nav_delete" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_add"
+            app:destination="@id/nav_add" />
     </fragment>
 
     <fragment
         android:id="@id/nav_add"
         android:name="com.example.myapplication.ui.ui.add.AddFragment"
-        tools:layout="@layout/fragment_add" />
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_nav_add_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_add_to_nav_delete"
+            app:destination="@id/nav_delete" />
+        <action
+            android:id="@+id/action_nav_add_to_nav_update"
+            app:destination="@id/nav_update" />
+    </fragment>
 
     <fragment
         android:id="@id/nav_update"
@@ -165,6 +46,15 @@
         <argument
             android:name="productId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_nav_update_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_update_to_nav_add"
+            app:destination="@id/nav_add" />
+        <action
+            android:id="@+id/action_nav_update_to_nav_delete"
+            app:destination="@id/nav_delete" />
     </fragment>
 
     <fragment
@@ -174,6 +64,15 @@
         <argument
             android:name="productId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_nav_delete_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_delete_to_nav_add"
+            app:destination="@id/nav_add" />
+        <action
+            android:id="@+id/action_nav_delete_to_nav_update"
+            app:destination="@id/nav_update" />
     </fragment>
 
 </navigation>
