@@ -4,39 +4,40 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentDeleteBinding
+import com.example.myapplication.model.Product
+import com.example.myapplication.repository.Repository
+import com.example.myapplication.repository.RepositoryImp
+import com.example.myapplication.utils.Inventory
 
 class DeleteFragment : Fragment() {
 
-    private var _binding: FragmentDeleteBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+//    private val productList: MutableList<Product> = mutableListOf()
+//    private lateinit var productAdapter: DeleteProductAdapter
+    private lateinit var productAdapter: DeleteProductAdapter
+    private val repository = RepositoryImp()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        val deleteViewModel =
-        ViewModelProvider(this).get(DeleteViewModel::class.java)
+    ): View? {
+        // Infla el diseño para este fragmento
+        val view = inflater.inflate(R.layout.fragment_delete, container, false)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.listadeleteproductos)
 
-        _binding = FragmentDeleteBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        productAdapter = DeleteProductAdapter(repository)
+        recyclerView.adapter = productAdapter
 
-//        val textView: TextView = binding.textDelete
-//        deleteViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
-        return root
+        return view
+
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

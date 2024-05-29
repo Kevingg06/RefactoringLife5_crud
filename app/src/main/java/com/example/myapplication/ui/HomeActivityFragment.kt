@@ -13,17 +13,24 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityHomeFragmentBinding
+import com.example.myapplication.repository.RepositoryImp
 
 
 class HomeActivityFragment : AppCompatActivity() {
+
+    private val repository = RepositoryImp()
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeFragmentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.item_delproduct)
+
+        val recyclerView = findViewById<RecyclerView>(R.id.listadeleteproductos)
 
         binding = ActivityHomeFragmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -55,17 +62,6 @@ class HomeActivityFragment : AppCompatActivity() {
         return true
     }
 
-    //Intento de navegacion para que al presionar el boton delete, muestre la pantalla del Recycler View de productos.
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                binding.drawerLayout.openDrawer(GravityCompat.START)
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-    //Fin Intento
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_home_activity_fragment)

@@ -1,34 +1,36 @@
 package com.example.myapplication.repository
 
 import com.example.myapplication.model.Product
+import com.example.myapplication.utils.Inventory
 import com.example.myapplication.utils.Inventory.products
 
 
-class RepositoryImp : Repository {
+class RepositoryImp: Repository {
 
     override fun getProducts(): List<Product> {
-        return products
+        return Inventory.products
     }
 
     override fun addProduct(product: Product) {
-        products.add(product)
+        Inventory.products.add(product)
     }
 
     override fun updateProduct(product: Product) {
-        val index = products.indexOfFirst { it.id == product.id }
+        val index = Inventory.products.indexOfFirst { it.id == product.id }
         if (index != -1) {
-            products[index] = product
+            Inventory.products[index] = product
         }
     }
 
-    override fun deleteProduct(id: String, cantidad: Int) {
-        for (item in products) {
-            if (id == item.id) {
-                item.stock -= cantidad
-            }
+    // Elimina un producto en una posición dada de la lista de Inventory
+    override fun removeProductAt(position: Int) {
+        if (position >= 0 && position < Inventory.products.size) {
+            Inventory.products.removeAt(position)
         }
     }
 
+
+    // Busca productos en la lista que coincidan con el texto proporcionado
     override fun searchProduct(productList: MutableList<Product>, newText: String?): List<Product> {
         val filteredList = mutableListOf<Product>()
 
