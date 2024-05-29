@@ -31,7 +31,7 @@ class RepositoryImp: Repository {
 
 
     // Busca productos en la lista que coincidan con el texto proporcionado
-    override fun searchProduct(productList: MutableList<Product>, newText: String?): List<Product> {
+    override fun searchProduct(productList: List<Product>, newText: String?): List<Product> {
         val filteredList = mutableListOf<Product>()
 
         if (newText.isNullOrBlank()) {

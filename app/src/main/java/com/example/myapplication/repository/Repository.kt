@@ -9,5 +9,5 @@ interface Repository {
     fun updateProduct(product: Product)
 
     fun removeProductAt(position: Int)
-    fun searchProduct(productList: MutableList<Product>, newText: String?): List<Product>
+    fun searchProduct(productList: List<Product>, newText: String?): List<Product>
 }

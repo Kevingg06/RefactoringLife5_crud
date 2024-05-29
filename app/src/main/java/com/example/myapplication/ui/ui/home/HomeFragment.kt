@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.example.myapplication.databinding.FragmentHomeBinding
-import com.example.myapplication.model.Product
 import com.example.myapplication.utils.Inventory.products
 import com.example.myapplication.utils.ProductsAdapter
 
@@ -29,8 +29,9 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        miSearch(products)
+        miSearch()
         initRecyclerView()
+        observe()
 
         return root
 
@@ -42,7 +43,7 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
-    private fun miSearch(productList: MutableList<Product>) {
+    private fun miSearch() {
         binding.homeSv.setOnQueryTextListener(object :
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -50,16 +51,19 @@ class HomeFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                val filteredList = homeViewModel.searchProducts(productList, newText)
-                adapter.setNewList(filteredList)
+                homeViewModel.searchProducts(newText)
                 return true
             }
+        })
+    }
+
+    private fun observe() {
+        homeViewModel.filteredProducts.observe(viewLifecycleOwner, Observer { filteredList ->
+            adapter.setNewList(filteredList.toMutableList())
         })
     }
 
     private fun initRecyclerView() {
         binding.recyclerViewHome.adapter = adapter
     }
-
-
 }
