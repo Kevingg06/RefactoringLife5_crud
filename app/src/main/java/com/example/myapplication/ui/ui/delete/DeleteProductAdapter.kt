@@ -7,9 +7,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.model.Product
+import com.example.myapplication.repository.RepositoryImp
+import com.example.myapplication.utils.Inventory.products
 import com.squareup.picasso.Picasso
 
-class DeleteProductAdapter(private val productList: MutableList<Product>) :
+class DeleteProductAdapter(
+    private val repository: RepositoryImp) :
     RecyclerView.Adapter<DeleteProductAdapter.ProductViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
@@ -19,7 +22,7 @@ class DeleteProductAdapter(private val productList: MutableList<Product>) :
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        val product = productList[position]
+        val product = products[position]
         holder.idTextView.text = product.id
         holder.nameTextView.text = product.name
         holder.stockTextView.text = product.stock.toString()
@@ -32,12 +35,12 @@ class DeleteProductAdapter(private val productList: MutableList<Product>) :
             removeProductAt(position)
         }
     }
-     override fun getItemCount() = productList.size
+     override fun getItemCount() = products.size
 
         private fun removeProductAt(position: Int) {
-            productList.removeAt(position)
+            products.removeAt(position)
             notifyItemRemoved(position)
-            notifyItemRangeChanged(position, productList.size)
+            notifyItemRangeChanged(position, products.size)
         }
 
         class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
