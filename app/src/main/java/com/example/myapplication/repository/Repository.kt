@@ -1,11 +1,13 @@
 package com.example.myapplication.repository
 
 import com.example.myapplication.model.Product
+import com.example.myapplication.utils.Inventory
 
 interface Repository {
     fun getProducts(): List<Product>
     fun addProduct(product: Product)
     fun updateProduct(product: Product)
-    fun deleteProduct(id:String, cantidad:Int)
+
+    fun removeProductAt(position: Int)
     fun searchProduct(productList: MutableList<Product>, newText: String?): List<Product>
 }
