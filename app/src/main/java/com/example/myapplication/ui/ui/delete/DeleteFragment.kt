@@ -3,8 +3,8 @@ package com.example.myapplication.ui.ui.delete
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import androidx.fragment.app.Fragment
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,11 +15,8 @@ import com.example.myapplication.model.Product
 
 class DeleteFragment : Fragment() {
 
-   // private var _binding: FragmentDeleteBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-   // private val binding get() = _binding!!
+    private val productList: MutableList<Product> = mutableListOf()
+    private lateinit var productAdapter: DeleteProductAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,25 +26,24 @@ class DeleteFragment : Fragment() {
         // Infla el diseño para este fragmento
         val view = inflater.inflate(R.layout.fragment_delete, container, false)
         val recyclerView = view.findViewById<RecyclerView>(R.id.listadeleteproductos)
+
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = DeleteProductAdapter(getProducts())
+        //recyclerView.adapter= DeleteProductAdapter(getProducts())
+        productAdapter = DeleteProductAdapter(productList)
+        recyclerView.adapter = productAdapter
+
+        // Inicializar la lista de productos
+        initializeProducts()
+
         return view
-//        val deleteViewModel =
-//        ViewModelProvider(this).get(DeleteViewModel::class.java)
-//
-//        _binding = FragmentDeleteBinding.inflate(inflater, container, false)
-//        val root: View = binding.root
-//
-////        val textView: TextView = binding.textDelete
-////        deleteViewModel.text.observe(viewLifecycleOwner) {
-////            textView.text = it
-////        }
-//        return root
-  //      return inflater.inflate(R.layout.fragment_delete, container, false)
+    //return inflater.inflate(R.layout.fragment_delete, container, false)
     }
-    private fun getProducts(): List<Product> {
+    //private fun getProducts(): List<Product> {
+    private fun initializeProducts() {
+        productList.addAll(
         // Aquí puedes añadir productos reales
-        return listOf(
+        //return listOf(
+            listOf(
             Product("Producto 1", "Descripción 1",100.0,"https://drcormillot.com.ar/wp-content/uploads/2023/04/salchicha_1_ok.jpg",10),
             Product("Producto 2", "Descripción 2",151.0,"https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/ecaeb2cc-a950-4645-a648-9137305b3287/Derivates/df977b90-193d-49d4-a59d-8dd922bcbf65.jpg",15),
             Product("Producto 3", "Descripción 3",161.0,"https://www.cucinare.tv/wp-content/uploads/2020/11/Hamburguesas-1024x576.jpg",30),
@@ -61,10 +57,8 @@ class DeleteFragment : Fragment() {
             Product("Producto 11", "Descripción 11",05.0,"https://assets.epicurious.com/photos/62c4b089bfd689c61cf0ac8c/1:1/w_1600,c_limit/Chilaquiles_RECIPE_062922_36571.jpg",20),
             Product("Producto 12", "Descripción 12",10.50,"https://cdn7.kiwilimon.com/recetaimagen/14881/640x426/7199.jpg.webp",5)
         )
+        )
+        productAdapter.notifyDataSetChanged()
     }
 
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        _binding = null
-//    }
 }

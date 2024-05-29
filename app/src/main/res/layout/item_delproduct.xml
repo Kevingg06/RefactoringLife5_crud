@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="10dp"
+    android:layout_margin="5dp"
     android:background="@drawable/rounded_corners">
     <ImageView
-        android:id="@+id/imageproduct"
+        android:id="@+id/image_product"
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:layout_marginLeft="10dp"
@@ -20,58 +20,68 @@
     <TextView
         android:id="@+id/product_id"
         android:text="ID"
-        android:textColor="@color/white"
+        android:textColor="#9F9F9F"
         android:textStyle="bold"
         android:textSize="16sp"
         android:layout_width="150dp"
         android:layout_height="30dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="20dp"
-        app:layout_constraintStart_toEndOf="@+id/imageproduct"
+        app:layout_constraintStart_toEndOf="@+id/image_product"
         app:layout_constraintRight_toRightOf="@+id/contenedorItem"
         app:layout_constraintTop_toTopOf="@+id/contenedorItem"/>
 
     <TextView
         android:id="@+id/product_name"
         android:text="Nombre"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="16sp"
         android:layout_width="150dp"
         android:layout_height="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintStart_toEndOf="@+id/imageproduct"
+        app:layout_constraintStart_toEndOf="@+id/image_product"
         app:layout_constraintTop_toBottomOf="@+id/product_id"
         app:layout_constraintBottom_toTopOf="@+id/product_stock"/>
 
     <TextView
         android:id="@+id/product_stock"
         android:text="Stock"
-        android:textColor="@color/white"
+        android:textColor="@color/azul"
         android:textStyle="bold"
         android:textSize="16sp"
         android:layout_width="150dp"
         android:layout_height="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintStart_toEndOf="@+id/imageproduct"
+        app:layout_constraintStart_toEndOf="@+id/image_product"
         app:layout_constraintTop_toBottomOf="@+id/product_name"
         app:layout_constraintRight_toRightOf="parent"/>
 
     <TextView
         android:id="@+id/product_price"
         android:text="Precio"
-        android:textColor="@color/white"
+        android:textColor="#8C6121"
         android:textStyle="bold"
         android:textSize="16sp"
         android:layout_width="150dp"
         android:layout_height="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintStart_toEndOf="@+id/imageproduct"
+        app:layout_constraintStart_toEndOf="@+id/image_product"
         app:layout_constraintTop_toBottomOf="@+id/product_stock"
         app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageView
+        android:id="@+id/product_eliminar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toEndOf="@id/contenedorItem"
+        app:layout_constraintBottom_toBottomOf="@id/contenedorItem"
+        android:background="@drawable/eliminar"/>
 
 
 
