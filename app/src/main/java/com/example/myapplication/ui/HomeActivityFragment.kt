@@ -55,17 +55,6 @@ class HomeActivityFragment : AppCompatActivity() {
         return true
     }
 
-    //Intento de navegacion para que al presionar el boton delete, muestre la pantalla del Recycler View de productos.
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                binding.drawerLayout.openDrawer(GravityCompat.START)
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-    //Fin Intento
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_home_activity_fragment)
