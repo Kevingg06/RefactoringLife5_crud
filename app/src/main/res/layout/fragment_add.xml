@@ -18,11 +18,15 @@
         android:padding="16dp"
         tools:context=".ui.AddFragment">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back" />
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:text="Volver"
+            android:background="@drawable/button_background"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"

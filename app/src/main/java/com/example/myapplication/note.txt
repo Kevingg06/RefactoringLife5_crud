@@ -1,6 +1,7 @@
 URL
 
-Laptop: https://compusistemasperu.com/wp-content/uploads/2023/03/HPG8.jpg
-Computadora:
-
-Galaxy A55 5G: https://images.samsung.com/is/image/samsung/p6pim/pe/sm-a556ezkqltp/gallery/pe-galaxy-a55-5g-sm-a556-sm-a556ezkqltp-thumb-540264696?$172_172_PNG$
+add(Product("01", "Redmi Note 13", 1.629, "https://http2.mlstatic.com/D_NQ_NP_945367-MLA74927641613_032024-O.webp", 5))
+add(Product("02", "MacBook Air M2", 4.450, "https://http2.mlstatic.com/D_NQ_NP_999100-MLA73526838187_122023-O.webp", 10))
+add(Product("03", "iPad Mini", 2.199, "https://http2.mlstatic.com/D_NQ_NP_958029-MPE52024486412_102022-O.webp", 15))
+add(Product("04", "CPU Gamer", 1.609, "https://http2.mlstatic.com/D_NQ_NP_709349-MLU75151902671_032024-O.webp", 4))
+add(Product("05", "Laptop Asus", 1.000, "https://compusistemasperu.com/wp-content/uploads/2023/03/HPG8.jpg", 3))

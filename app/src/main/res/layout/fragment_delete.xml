@@ -16,11 +16,15 @@
         android:padding="16dp"
         tools:context=".ui.DeleteFragment">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back" />
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:text="Volver"
+            android:background="@drawable/button_background"/>
 
         <TextView
             android:id="@+id/productId"
