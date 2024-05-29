@@ -29,9 +29,10 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        miSearch()
+        homeViewModel.initProductList()
         initRecyclerView()
         observe()
+        miSearch()
 
         return root
 
