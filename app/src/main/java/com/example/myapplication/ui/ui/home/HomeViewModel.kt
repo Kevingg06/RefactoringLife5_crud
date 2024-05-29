@@ -9,7 +9,7 @@ import com.example.myapplication.utils.Inventory.products
 
 class HomeViewModel(private val repositoryImp: RepositoryImp = RepositoryImp()) : ViewModel() {
 
-    fun searchProducts(newText : String?): List<Product>{
-        return repositoryImp.searchProduct(products, newText)
+    fun searchProducts(list: MutableList<Product>,newText : String?): List<Product>{
+        return repositoryImp.searchProduct(list, newText)
     }
 }
